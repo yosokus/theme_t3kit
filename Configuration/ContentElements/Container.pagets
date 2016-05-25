@@ -1,0 +1,30 @@
+mod.wizards.newContentElement.wizardItems.contentElements {
+    elements {
+        container {
+            title = LLL:EXT:theme_t3kit/Resources/Private/Language/ContentElements.xlf:container.title
+            description = LLL:EXT:theme_t3kit/Resources/Private/Language/ContentElements.xlf:container.description
+            icon = ../typo3conf/ext/theme_t3kit/Resources/Public/Icons/ContentElements/container.svg
+            tt_content_defValues {
+                CType = container
+            }
+        }
+    }
+    show := addToList(container)
+}
+
+mod.web_layout.tt_content.preview.container = EXT:theme_t3kit/Resources/Private/Templates/ContentElements/BE/Container.html
+
+# Use layout field to customize Layout select-box on container
+TCEFORM.tt_content.layout {
+    types {
+        container {
+            # Based on that the default items still exists.
+            removeItems = 3
+            altLabels {
+                0 = No container
+                1 = Container
+                2 = Fluid container
+            }
+        }
+    }
+}
